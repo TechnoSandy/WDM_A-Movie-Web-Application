@@ -1,0 +1,280 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://lambda.uta.edu/cse5335/
+Subject: CSE5335 Home Page
+Date: Thu, 27 Sep 2018 19:16:22 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--JPZVIdpnCLMspPdmcdqdSO4zKKWIZ9tK6ydmGOJ11D----"
+
+
+------MultipartBoundary--JPZVIdpnCLMspPdmcdqdSO4zKKWIZ9tK6ydmGOJ11D----
+Content-Type: text/html
+Content-ID: <frame-ACCEFC9799E4E40D69C12C1A59CBE9E6@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://lambda.uta.edu/cse5335/
+
+<html class=3D"gr__lambda_uta_edu"><head><meta http-equiv=3D"Content-Type" =
+content=3D"text/html; charset=3Dwindows-1252">
+<link rel=3D"shortcut icon" href=3D"https://lambda.uta.edu/favicon.ico" typ=
+e=3D"image/x-icon">
+<link rel=3D"icon" href=3D"https://lambda.uta.edu/favicon.ico" type=3D"imag=
+e/x-icon">
+<title>CSE5335 Home Page</title>
+</head>
+
+<frameset cols=3D"161,*" framespacing=3D"2" border=3D"1" frameborder=3D"1" =
+data-gr-c-s-loaded=3D"true">
+  <frame name=3D"contents" target=3D"main" src=3D"cid:frame-DAA6EEE2CEC27ED=
+737774F5AC6E84771@mhtml.blink" scrolling=3D"auto" noresize=3D"" marginwidth=
+=3D"15" marginheight=3D"16" __idm_frm__=3D"550">
+  <frame name=3D"Main" src=3D"cid:frame-5936B6E8BD5198501963592127DE8458@mh=
+tml.blink" target=3D"_self" __idm_frm__=3D"551" __idm_id__=3D"593774593">
+  <noframes>
+     <body leftmargin=3D"0">
+         <p>This page uses frames, but your browser doesn't support them.</=
+p>
+     </body>
+  </noframes>
+</frameset>
+
+<span class=3D"gr__tooltip"><span class=3D"gr__tooltip-content"></span><i c=
+lass=3D"gr__tooltip-logo"></i><span class=3D"gr__triangle"></span></span></=
+html>
+------MultipartBoundary--JPZVIdpnCLMspPdmcdqdSO4zKKWIZ9tK6ydmGOJ11D----
+Content-Type: text/html
+Content-ID: <frame-DAA6EEE2CEC27ED737774F5AC6E84771@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://lambda.uta.edu/cse5335/contents.html
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3Dwindows-1252">
+   <title>CSE5335</title>
+</head>
+<body bgcolor=3D"#ffffff" text=3D"#000000" marginwidth=3D"15" marginheight=
+=3D"16">
+<center>
+<h3>CSE5335</h3>
+</center>
+<p>
+</p><p align=3D"left" style=3D"margin-left: 10"><b><a href=3D"https://lambd=
+a.uta.edu/cse5335/main.shtml" target=3D"Main">Main</a></b></p>
+<p align=3D"left" style=3D"margin-left: 10"><b><a href=3D"https://lambda.ut=
+a.edu/cse5335/outline.shtml" target=3D"Main">Outline</a></b></p>
+<p align=3D"left" style=3D"margin-left: 10"><b><a href=3D"https://lambda.ut=
+a.edu/cse5335/syllabus.html" target=3D"Main">Syllabus</a></b></p>
+<p align=3D"left" style=3D"margin-left: 10"><b><a href=3D"https://lambda.ut=
+a.edu/cse5335/project1.html" target=3D"Main">Project 1</a></b></p>
+<p align=3D"left" style=3D"margin-left: 10"><b><a href=3D"https://lambda.ut=
+a.edu/cse5335/project2.html" target=3D"Main">Project 2</a></b></p>
+<p align=3D"left" style=3D"margin-left: 10"><b><a href=3D"https://lambda.ut=
+a.edu/cgi-bin/php/status.php?class=3Dcse5335" target=3D"Main">login/status<=
+/a></b></p>
+
+
+</body></html>
+------MultipartBoundary--JPZVIdpnCLMspPdmcdqdSO4zKKWIZ9tK6ydmGOJ11D----
+Content-Type: text/html
+Content-ID: <frame-5936B6E8BD5198501963592127DE8458@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://lambda.uta.edu/cse5335/project2.html
+
+<!DOCTYPE html><html lang=3D"en"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8">
+<title>CSE5335 Programming Assignment 2</title>
+
+</head>
+<body>
+<center>
+<h1>Programming Assignment 2<br>
+A Movie Web Application</h1>
+Due on Tuesday October 9 before midnight<br>
+Worth 5% of your final grade
+</center>
+<hr>
+<h2>Description</h2>
+<p>
+This project must be done individually. No copying is permitted. The
+goal of this project is to learn client-side web programming using
+JavaScript and AJAX.  More specifically, you will create
+a Web application that displays information about movies.
+</p>
+This project must be done individually. No copying is permitted.=20
+<b>Note: We will use a system for detecting software plagiarism, called
+<a href=3D"http://theory.stanford.edu/~aiken/moss/" target=3D"_top">Moss</a=
+>,
+which is an automatic system for determining the similarity of programs.</b=
+>
+That is, your program will be compared with the programs of the other stude=
+nts in class
+as well as with the programs submitted in previous years. This program will=
+ find
+similarities even if you rename variables, move code, change code structure=
+, etc.
+<p></p>
+<p>
+Note that, if you use a Search Engine to find similar programs on the web, =
+we will find these programs too.
+So don't do it because you will get caught and you will get an F in the cou=
+rse (this is cheating).
+Don't look for code to use for your project on the web or from other studen=
+ts (current or past).
+Just do your project alone using the help given in this project description=
+ and from your instructor and GTA only.
+Finally, you should not post your code nor deploy your project on a public =
+web site.
+</p>
+<h2>Platform</h2>
+<p>
+You will do this project on your own PC/laptop.
+You need to install the <a href=3D"https://www.apachefriends.org/" target=
+=3D"_top">XAMPP</a> web server,
+which includes the Apache http web server, PHP, and MySQL. It's about 125MB=
+s (775MBs after installation) and
+can be installed on Windows, Linux, and OS X.
+The installation directory is <tt>\xampp</tt> for Windows, <tt>/opt/lampp</=
+tt> for Linux, and <tt>/Applications/XAMPP</tt> for OS X.
+</p>
+<p>
+You will test the project on your PC/laptop using
+the Mozilla Firefox web browser.
+</p>
+<h2>Setting up your project</h2>
+<p>
+Download the project2 files <a href=3D"https://lambda.uta.edu/cse5335/proje=
+ct2.zip">project2.zip</a> and unarchive them inside your web server documen=
+t root directory (ie, inside the <tt>htdocs</tt> sub-directory in the XAMPP=
+ instalation directory). On Linux, you may have to do this as the root user=
+.
+</p>
+<p>
+The project2 directory contains 3 files: <tt>proxy.php</tt>, <tt>movies.htm=
+l</tt>, and <tt>movies.js</tt>.
+The proxy script <tt>proxy.php</tt> is used to
+avoid the cross-domain restriction when using Ajax. All the web service req=
+uests to TMDb
+should go through this proxy. See the example in <tt>movies.js</tt>.
+Your project is to edit <tt>movies.html</tt> and <tt>movies.js</tt> as desc=
+ribed in the description of the web application.
+</p>
+<h2>Getting an access key from TMDb</h2>
+<p>
+You are going to use the Web Service REST API of the movie DB <a href=3D"ht=
+tps://www.themoviedb.org/documentation/api" target=3D"_top">TMDb</a>.
+You first need to get an API access key from
+<a href=3D"https://www.themoviedb.org/account/signup" target=3D"_top">Sign =
+up a TMDb account</a>.
+The access key will allow you to send web service requests to TMDb (maximum=
+ 3 requests per second).
+</p><p>
+After you get the API key, you put it in <tt>proxy.php</tt> and you
+test your setup on your web browser by using the URL address:<br>
+<a href=3D"http://localhost/project2/movies.html" target=3D"_top">http://lo=
+calhost/project2/movies.html</a><br>
+and by typing the title of your favorite movie.
+This will display a list of movies that match this title in JSON form.
+</p>
+<h2>Documentation</h2>
+<p>
+The following web pages contain various tutorials. Use them as a
+reference only. The class slides contain enough information on
+AJAX.
+</p><ul>
+<li> <a href=3D"https://developers.themoviedb.org/3/getting-started" target=
+=3D"_top">The Movie Database API</a></li>
+<li> <a href=3D"http://www.w3schools.com/js/js_ajax_intro.asp" target=3D"_t=
+op">AJAX Tutorial</a></li>
+<li> <a href=3D"http://www.cs.rochester.edu/courses/210/spring2011/lectures=
+/012/" target=3D"_top">Ajax</a></li>
+</ul>
+<p></p>
+<h2>Description of the Web Application</h2>
+<p>
+Your project is to develop a web application to get information about movie=
+s, their cast, their posters, etc.
+This application should be developed using plain JavaScript and Ajax.
+You should not use any JavaScript library, such as JQuery.
+Note that everything should be done asynchronously and your web page should=
+ never be redrawn/refreshed completely.
+This means that the buttons or any other input element in your HTML forms m=
+ust have JavaScript actions,
+and should not be regular HTTP requests.
+</p>
+<p>
+Your application should have a text section where one can type a movie titl=
+e (eg, The Matrix),
+one "<tt>Display Info</tt>" button to search, one section to display the se=
+arch results,
+and one section to display information about a movie.
+The search results is an itemized clickable list of movie titles along with=
+ their years they were released.
+When you click on one of these movie titles, you display information about =
+the movie:
+the poster of the movie as an image,
+the movie title, its genres (separated by comma),
+the movie overview (summary),
+and the names of the top five cast members (ie, actors who play in the movi=
+e).
+</p><p>
+</p>
+You need to use the following TMDb HTTP methods listed in <a href=3D"https:=
+//developers.themoviedb.org/3/getting-started" target=3D"_top">The Movie Da=
+tabase API</a>:
+<ul>
+<li> <a href=3D"https://developers.themoviedb.org/3/search/search-movies">/=
+3/search/movie</a>: Search for movies by title.</li>
+<li> <a href=3D"https://developers.themoviedb.org/3/movies">/3/movie/{id}</=
+a>: Get the basic movie information for a specific movie id.</li>
+<li> <a href=3D"https://developers.themoviedb.org/3/movies/get-movie-credit=
+s">/3/movie/{id}/credits</a>: Get the cast and crew information for a speci=
+fic movie id.</li>
+</ul>
+You need to call the TMDb web service through the <tt>proxy.php</tt>.
+For example, to get information about the movie "The Matrix" (which has id =
+603), you use the HTTP call
+<tt>proxy.php?method=3D/3/movie/603</tt> (it doesn't need the API key -- it=
+'s already in the proxy).
+To search for the movie "matrix", you call
+<tt>proxy.php?method=3D/3/search/movie&amp;query=3Dmatrix</tt>.
+<p></p>
+<p>
+Note that there is a lot of information returned by these web services.
+You need to use very few parts of this information only.
+</p>
+<p></p>
+<h2>What to Submit</h2>
+<p>
+After you make sure that your programs runs correctly, zip your project2 di=
+rectory.
+Use the form below to submit your <tt>project2.zip</tt>file.=20
+We do not accept email or hardcopy submissions. You may submit multiple fil=
+es, if you like, as
+long as they have different names. These files are automatically
+uploaded directly into your personal class account for this particular
+project, so you don't have to include your name or student ID or
+project number in the file name. You may submit your files as many
+times as you like, but only the most recently submitted files will be
+retained and evaluated (newly submitted files replace the old files
+under the same file name). After you submit the files, please
+double-check that your submitted files are correct by clicking on the
+8Status link and look the submitted files.
+</p>
+<form enctype=3D"multipart/form-data" action=3D"https://lambda.uta.edu/cgi-=
+bin/php/handin.php" method=3D"POST">
+  <fieldset>
+    <legend>Submit Project #2:</legend>
+   =20
+   =20
+   =20
+    <label>Select a file: <input name=3D"userfile" type=3D"file"></label><b=
+r>
+    <input type=3D"submit" value=3D"Send File">
+  </fieldset>
+</form>
+<p></p>
+<address>Last modified: 25/09/2018 by <a href=3D"http://lambda.uta.edu/">Le=
+onidas Fegaras</a></address>
+
+
+</body></html>
+------MultipartBoundary--JPZVIdpnCLMspPdmcdqdSO4zKKWIZ9tK6ydmGOJ11D------
