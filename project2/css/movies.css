@@ -1,0 +1,12 @@
+div#output {
+	border: 1px red dotted;
+	color: black;
+	font-size: xx-large;
+	background-color: #ffd7fe;
+}
+
+div#output>ol {
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+}
