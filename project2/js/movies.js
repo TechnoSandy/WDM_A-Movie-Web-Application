@@ -1,4 +1,6 @@
-function initialize() {}
+function initialize() {
+	createList();
+}
 
 function sendRequest() {
 	var xhr = new XMLHttpRequest();
@@ -22,5 +24,25 @@ function sendRequest() {
 
 function addMovieList(str) {
 	document.getElementById("outputMSG").innerHTML = "<pre>" + str + "</pre>";
-	//	document.getElementById("output").innerHTML = "addMovieList() called";
+
+}
+
+//function movieListClick() {
+//	var li = document.getElementById("1")
+//	console.log(li.textContent || li.innerText);
+//}
+
+function createList() {
+	var ol = document.getElementById("orderedList");
+	for (var i = 0; i < 5; i++) {
+		// Create the list item:
+		var item = document.createElement('li');
+		item.setAttribute("id", i);
+
+		// Set its contents:
+		item.appendChild(document.createTextNode(i));
+
+		// Add it to the list:
+		ol.appendChild(item);
+	}
 }

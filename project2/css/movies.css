@@ -3,6 +3,7 @@ div#output {
 	color: black;
 	font-size: xx-large;
 	background-color: #ffd7fe;
+	display: inline-block;
 }
 
 div#output>ol {
@@ -23,3 +24,10 @@ label {
 #button {
 	font-size: x-large;
 }
+
+/*
+ol {
+	font-size: 30px;
+	border: 1px dotted black;
+	width: 100%;
+}*/
