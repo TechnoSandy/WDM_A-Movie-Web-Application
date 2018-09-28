@@ -1,9 +1,9 @@
 div#output {
-	border: 1px red dotted;
+	/*	border: 1px red dotted;*/
 	color: black;
 	font-size: xx-large;
-	background-color: #ffd7fe;
 	display: inline-block;
+	margin-left: 40px;
 }
 
 div#output>ol {
