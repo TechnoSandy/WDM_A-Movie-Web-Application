@@ -50,17 +50,21 @@ function createList(str, json) {
 
 	var ol = document.getElementById("orderedList");
 	for (var i = 0; i < resultObject; i++) {
-		var item = document.createElement('li');
-		item.setAttribute("id", i);
-		item.appendChild(document.createTextNode(i));
-		ol.appendChild(item);
+		var li = document.createElement('li');
+		var img = document.createElement('img');
+		li.setAttribute("id", "li" + i);
+		img.setAttribute("src", "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].backdrop_path);
+		//		img.setAttribute("src", "img" + i);
+		li.appendChild(document.createTextNode(i));
+		ol.appendChild(li);
+		ol.appendChild(img);
 	}
 
 	for (var i = 0; i < resultObject; i++) {
 		var li = document.getElementById(i);
-		//		document.getElementById(i).innerHTML = " Movie Title: &nbsp; " + json.results[i].original_title + " &nbsp; Release: " + json.results[i].release_date;
-		document.getElementById(i).innerHTML = " Movie Title: &nbsp; " + json.results[i].original_title + " &nbsp; Release: " + json.results[i].release_date;
+		document.getElementById("li" + i).innerHTML = " Movie Title: &nbsp; " + json.results[i].original_title + " &nbsp; Release: " + json.results[i].release_date;
 
 
 	}
+
 }
