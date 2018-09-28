@@ -40,8 +40,13 @@ function sendRequest() {
 function deleteList() {
 	var allLi = document.getElementsByTagName("li"),
 		index;
+	var allImg = document.getElementsByTagName("img"),
+		index1;
 	for (index = allLi.length - 1; index >= 0; index--) {
 		allLi[index].parentNode.removeChild(allLi[index]);
+	}
+	for (index1 = allImg.length - 1; index1 >= 0; index1--) {
+		allImg[index1].parentNode.removeChild(allImg[index1]);
 	}
 }
 
@@ -52,9 +57,15 @@ function createList(str, json) {
 	for (var i = 0; i < resultObject; i++) {
 		var li = document.createElement('li');
 		var img = document.createElement('img');
+		img.setAttribute("id", "img" + i)
 		li.setAttribute("id", "li" + i);
-		img.setAttribute("src", "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].backdrop_path);
-		//		img.setAttribute("src", "img" + i);
+		if (json.results[i].poster_path)
+			img.setAttribute("src", "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].poster_path);
+		else if (json.results[i].backdrop_path) {
+			img.setAttribute("src", "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].backdrop_path);
+		} else {
+			img.setAttribute = img.setAttribute("src", "https://via.placeholder.com/350x150");
+		}
 		li.appendChild(document.createTextNode(i));
 		ol.appendChild(li);
 		ol.appendChild(img);
