@@ -1,4 +1,4 @@
-var resultObject = 10;
+var resultObject;
 
 function initialize() {
 
