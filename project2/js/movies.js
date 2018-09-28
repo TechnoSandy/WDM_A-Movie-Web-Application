@@ -19,23 +19,23 @@ function sendRequest() {
 			//          document.getElementById("output").innerHTML = "<pre>" + str + "</pre>";
 			console.log(json.results.length);
 			resultObject = json.results.length;
-			createList();
-			addMovieList(str, json);
+			createList(str, json);
+			//			addMovieList(str, json);
 		}
 	};
 	xhr.send(null);
 
 }
-
-function addMovieList(str, json) {
-	json.results[0].title;
-	for (var i = 0; i < resultObject; i++) {
-		var li = document.getElementById(i);
-		document.getElementById(i).innerHTML = " Movie Title: &nbsp; " + json.results[i].title + " &nbsp; Release: " + json.results[i].release_date;
-
-	}
-
-}
+//
+//function addMovieList(str, json) {
+//	json.results[0].title;
+//	for (var i = 0; i < resultObject; i++) {
+//		var li = document.getElementById(i);
+//		document.getElementById(i).innerHTML = " Movie Title: &nbsp; " + json.results[i].title + " &nbsp; Release: " + json.results[i].release_date;
+//
+//	}
+//
+//}
 
 function deleteList() {
 	var allLi = document.getElementsByTagName("li"),
@@ -45,8 +45,9 @@ function deleteList() {
 	}
 }
 
-function createList() {
+function createList(str, json) {
 	deleteList();
+
 	var ol = document.getElementById("orderedList");
 	for (var i = 0; i < resultObject; i++) {
 		var item = document.createElement('li');
@@ -54,8 +55,12 @@ function createList() {
 		item.appendChild(document.createTextNode(i));
 		ol.appendChild(item);
 	}
+
 	for (var i = 0; i < resultObject; i++) {
 		var li = document.getElementById(i);
-		console.log(li.textContent || li.innerText);
+		//		document.getElementById(i).innerHTML = " Movie Title: &nbsp; " + json.results[i].original_title + " &nbsp; Release: " + json.results[i].release_date;
+		document.getElementById(i).innerHTML = " Movie Title: &nbsp; " + json.results[i].original_title + " &nbsp; Release: " + json.results[i].release_date;
+
+
 	}
 }
