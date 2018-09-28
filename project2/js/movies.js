@@ -1,4 +1,4 @@
-var resultObject = 20;
+var resultObject = 10;
 
 function initialize() {
 
@@ -17,7 +17,8 @@ function sendRequest() {
 			console.log(json);
 			var str = JSON.stringify(json, undefined, 2);
 			//          document.getElementById("output").innerHTML = "<pre>" + str + "</pre>";
-
+			console.log(json.results.length);
+			resultObject = json.results.length;
 			createList();
 			addMovieList(str, json);
 		}
