@@ -27,11 +27,6 @@ function addMovieList(str) {
 
 }
 
-//function movieListClick() {
-//	var li = document.getElementById("1")
-//	console.log(li.textContent || li.innerText);
-//}
-
 function createList() {
 	var ol = document.getElementById("orderedList");
 	for (var i = 0; i < 5; i++) {
@@ -44,5 +39,9 @@ function createList() {
 
 		// Add it to the list:
 		ol.appendChild(item);
+	}
+	for (var i = 0; i < 5; i++) {
+		var li = document.getElementById(i);
+		console.log(li.textContent || li.innerText);
 	}
 }
