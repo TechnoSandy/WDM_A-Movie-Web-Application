@@ -1,4 +1,4 @@
-var resultObject;
+var resultObject = 20;
 
 function initialize() {
 
@@ -28,7 +28,7 @@ function sendRequest() {
 
 function addMovieList(str, json) {
 	json.results[0].title;
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i < resultObject; i++) {
 		var li = document.getElementById(i);
 		document.getElementById(i).innerHTML = " Movie Title: &nbsp; " + json.results[i].title + " &nbsp; Release: " + json.results[i].release_date;
 
@@ -47,13 +47,13 @@ function deleteList() {
 function createList() {
 	deleteList();
 	var ol = document.getElementById("orderedList");
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i < resultObject; i++) {
 		var item = document.createElement('li');
 		item.setAttribute("id", i);
 		item.appendChild(document.createTextNode(i));
 		ol.appendChild(item);
 	}
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i < resultObject; i++) {
 		var li = document.getElementById(i);
 		console.log(li.textContent || li.innerText);
 	}
