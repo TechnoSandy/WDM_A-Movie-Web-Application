@@ -1,12 +1,3 @@
-//299536
-//
-//24428
-//
-//99861
-//
-//9320
-
-
 function initialize() {}
 
 function sendRequest() {
@@ -31,5 +22,5 @@ function sendRequest() {
 
 function addMovieList(str) {
 	document.getElementById("outputMSG").innerHTML = "<pre>" + str + "</pre>";
-	document.getElementById("output").innerHTML = "addMovieList() called";
+	//	document.getElementById("output").innerHTML = "addMovieList() called";
 }
