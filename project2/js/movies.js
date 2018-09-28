@@ -1,5 +1,7 @@
+var resultObject;
+
 function initialize() {
-	createList();
+
 }
 
 function sendRequest() {
@@ -15,29 +17,40 @@ function sendRequest() {
 			console.log(json);
 			var str = JSON.stringify(json, undefined, 2);
 			//          document.getElementById("output").innerHTML = "<pre>" + str + "</pre>";
-			addMovieList(str);
+
+			createList();
+			addMovieList(str, json);
 		}
 	};
 	xhr.send(null);
 
 }
 
-function addMovieList(str) {
-	document.getElementById("outputMSG").innerHTML = "<pre>" + str + "</pre>";
+function addMovieList(str, json) {
+	json.results[0].title;
+	for (var i = 0; i < 5; i++) {
+		var li = document.getElementById(i);
+		document.getElementById(i).innerHTML = " Movie Title: &nbsp; " + json.results[i].title + " &nbsp; Release: " + json.results[i].release_date;
+
+	}
 
 }
 
+function deleteList() {
+	var allLi = document.getElementsByTagName("li"),
+		index;
+	for (index = allLi.length - 1; index >= 0; index--) {
+		allLi[index].parentNode.removeChild(allLi[index]);
+	}
+}
+
 function createList() {
+	deleteList();
 	var ol = document.getElementById("orderedList");
 	for (var i = 0; i < 5; i++) {
-		// Create the list item:
 		var item = document.createElement('li');
 		item.setAttribute("id", i);
-
-		// Set its contents:
 		item.appendChild(document.createTextNode(i));
-
-		// Add it to the list:
 		ol.appendChild(item);
 	}
 	for (var i = 0; i < 5; i++) {
