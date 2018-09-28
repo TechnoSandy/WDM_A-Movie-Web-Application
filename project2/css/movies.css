@@ -10,3 +10,16 @@ div#output>ol {
 	margin: 0px;
 	display: inline-block;
 }
+
+#form-input {
+	font-size: 30px;
+	width: 80%;
+}
+
+label {
+	font-size: x-large;
+}
+
+#button {
+	font-size: x-large;
+}
