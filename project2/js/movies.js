@@ -40,14 +40,15 @@ function sendRequest() {
 function deleteList() {
 	var allLi = document.getElementsByTagName("li"),
 		index;
-	var allImg = document.getElementsByTagName("img"),
-		index1;
+	var allImg = document.getElementsByTagName("img");
+	var allP = document.getElementsByTagName("p");
+
 	for (index = allLi.length - 1; index >= 0; index--) {
 		allLi[index].parentNode.removeChild(allLi[index]);
+		allImg[index].parentNode.removeChild(allImg[index]);
+		allP[index].parentNode.removeChild(allP[index]);
 	}
-	for (index1 = allImg.length - 1; index1 >= 0; index1--) {
-		allImg[index1].parentNode.removeChild(allImg[index1]);
-	}
+
 }
 
 function createList(str, json) {
