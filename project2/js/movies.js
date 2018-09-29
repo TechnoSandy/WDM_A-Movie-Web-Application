@@ -28,17 +28,11 @@ function sendRequest() {
 }
 
 function deleteList() {
-	var allLi = document.getElementsByTagName("li"),
-		index;
-	var allImg = document.getElementsByTagName("img");
-	var allP = document.getElementsByTagName("p");
 
-	for (index = allLi.length - 1; index >= 0; index--) {
-		allLi[index].parentNode.removeChild(allLi[index]);
-		allImg[index].parentNode.removeChild(allImg[index]);
-		allP[index].parentNode.removeChild(allP[index]);
+	var completeList = document.getElementById("orderedList");
+	while (completeList.firstChild) {
+		completeList.removeChild(completeList.firstChild);
 	}
-
 }
 
 function createList(str, json) {
