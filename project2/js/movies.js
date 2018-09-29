@@ -59,6 +59,9 @@ function createList(str, json) {
 		var img = document.createElement('img');
 		img.setAttribute("id", "img" + i)
 		li.setAttribute("id", "li" + i);
+		// Other URL for images 
+		//https://image.tmdb.org/t/p/w500/
+		//Reference:https://developers.themoviedb.org/3/getting-started/images
 		if (json.results[i].poster_path)
 			img.setAttribute("src", "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].poster_path);
 		else if (json.results[i].backdrop_path) {
