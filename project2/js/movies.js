@@ -1,4 +1,5 @@
 var resultObject;
+var movieID = new Array();
 
 function initialize() {
 
@@ -16,11 +17,9 @@ function sendRequest() {
 			var json = JSON.parse(this.responseText);
 			console.log(json);
 			var str = JSON.stringify(json, undefined, 2);
-			//          document.getElementById("output").innerHTML = "<pre>" + str + "</pre>";
-			console.log(json.results.length);
 			resultObject = json.results.length;
 			createList(str, json);
-			//			addMovieList(str, json);
+
 		}
 	};
 	xhr.send(null);
@@ -60,6 +59,8 @@ function createList(str, json) {
 		} else {
 			img.setAttribute = img.setAttribute("src", "https://via.placeholder.com/350x150");
 		}
+		movieID.push(json.results[i].id);
+		//		console.log(json.results[i].id);
 		summary.innerHTML = json.results[i].overview;
 		title.innerHTML = " Movie Title: &nbsp; " + json.results[i].original_title + " &nbsp; Release: " + json.results[i].release_date;
 		li.appendChild(title);
@@ -67,4 +68,5 @@ function createList(str, json) {
 		title.appendChild(img);
 		ol.appendChild(li);
 	}
+	console.log(movieID);
 }
