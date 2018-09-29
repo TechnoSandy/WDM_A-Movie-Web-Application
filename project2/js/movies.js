@@ -26,16 +26,6 @@ function sendRequest() {
 	xhr.send(null);
 
 }
-//
-//function addMovieList(str, json) {
-//	json.results[0].title;
-//	for (var i = 0; i < resultObject; i++) {
-//		var li = document.getElementById(i);
-//		document.getElementById(i).innerHTML = " Movie Title: &nbsp; " + json.results[i].title + " &nbsp; Release: " + json.results[i].release_date;
-//
-//	}
-//
-//}
 
 function deleteList() {
 	var allLi = document.getElementsByTagName("li"),
@@ -57,11 +47,14 @@ function createList(str, json) {
 	var ol = document.getElementById("orderedList");
 	for (var i = 0; i < resultObject; i++) {
 		var li = document.createElement('li');
+		var title = document.createElement('p');
 		var img = document.createElement('img');
-		var p = document.createElement('p');
-		img.setAttribute("id", "img" + i)
+		var summary = document.createElement('p');
+
 		li.setAttribute("id", "li" + i);
-		p.setAttribute("id", "p" + i);
+		title.setAttribute("id", "title" + i);
+		summary.setAttribute("id", "summary" + i);
+		img.setAttribute("id", "img" + i)
 
 		// Other URL for images 
 		//https://image.tmdb.org/t/p/w500/
@@ -73,18 +66,11 @@ function createList(str, json) {
 		} else {
 			img.setAttribute = img.setAttribute("src", "https://via.placeholder.com/350x150");
 		}
-		li.appendChild(document.createTextNode(i));
-		p.innerHTML = json.results[i].overview;
+		summary.innerHTML = json.results[i].overview;
+		title.innerHTML = " Movie Title: &nbsp; " + json.results[i].original_title + " &nbsp; Release: " + json.results[i].release_date;
+		li.appendChild(title);
+		title.appendChild(summary);
+		title.appendChild(img);
 		ol.appendChild(li);
-		ol.appendChild(img);
-		ol.appendChild(p);
 	}
-
-	for (var i = 0; i < resultObject; i++) {
-		var li = document.getElementById(i);
-		document.getElementById("li" + i).innerHTML = " Movie Title: &nbsp; " + json.results[i].original_title + " &nbsp; Release: " + json.results[i].release_date;
-
-
-	}
-
 }
