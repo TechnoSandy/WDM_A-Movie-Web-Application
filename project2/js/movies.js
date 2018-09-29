@@ -32,6 +32,10 @@ function deleteList() {
 	while (completeList.firstChild) {
 		completeList.removeChild(completeList.firstChild);
 	}
+	while (movieID.length > 0) {
+		movieID.pop();
+	}
+
 }
 
 function createList(str, json) {
