@@ -57,8 +57,11 @@ function createList(str, json) {
 	for (var i = 0; i < resultObject; i++) {
 		var li = document.createElement('li');
 		var img = document.createElement('img');
+		var p = document.createElement('p');
 		img.setAttribute("id", "img" + i)
 		li.setAttribute("id", "li" + i);
+		p.setAttribute("id", "p" + i);
+
 		// Other URL for images 
 		//https://image.tmdb.org/t/p/w500/
 		//Reference:https://developers.themoviedb.org/3/getting-started/images
@@ -70,8 +73,10 @@ function createList(str, json) {
 			img.setAttribute = img.setAttribute("src", "https://via.placeholder.com/350x150");
 		}
 		li.appendChild(document.createTextNode(i));
+		p.innerHTML = json.results[i].overview;
 		ol.appendChild(li);
 		ol.appendChild(img);
+		ol.appendChild(p);
 	}
 
 	for (var i = 0; i < resultObject; i++) {
