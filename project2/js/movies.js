@@ -66,7 +66,9 @@ function createList(str, json) {
 		movieID.push(json.results[i].id);
 		//		console.log(json.results[i].id);
 		summary.innerHTML = json.results[i].overview;
-		title.innerHTML = " Movie Title: &nbsp; " + json.results[i].original_title + " &nbsp; Release: " + json.results[i].release_date;
+		//		title.innerHTML = " Movie Title: &nbsp; " + json.results[i].original_title + " &nbsp; Release: " + json.results[i].release_date;
+		//		li.appendChild(title);
+		title.innerHTML = " Movie Title: &nbsp; " + json.results[i].title + " &nbsp; Release: " + json.results[i].release_date;
 		li.appendChild(title);
 		title.appendChild(summary);
 		title.appendChild(img);
