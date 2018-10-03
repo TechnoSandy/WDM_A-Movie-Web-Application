@@ -1,5 +1,10 @@
 var resultObject;
 var movieID = new Array();
+var movieTitle = new Array();
+var movieDescription = new Array();
+var movieImageURL = new Array();
+var movieGenre = new Array();
+var movieCast = new Array();
 
 function initialize() {
 
@@ -9,8 +14,8 @@ function sendRequest() {
 	var xhr = new XMLHttpRequest();
 	var query = encodeURI(document.getElementById("form-input").value);
 	xhr.open("GET", "php/proxy.php?method=/3/search/movie&query=" + query); // Gets the movies having keyword in the query
-	//	xhr.open("GET", "php/proxy.php?method=/3/movie/" + query); // Gets the Movie Info
-	//	xhr.open("GET", "php/proxy.php?method=/3/movie/" + query + "/credits"); // Gets the Movie Credits
+	//	xhr.open("GET", "php/proxy.php?method=/3/movie/" + {MovieID}); // Gets the Movie Info
+	//	xhr.open("GET", "php/proxy.php?method=/3/movie/" + {MovieID} + "/credits"); // Gets the Movie Credits
 	xhr.setRequestHeader("Accept", "application/json");
 	xhr.onreadystatechange = function () {
 		if (this.readyState == 4) {
@@ -34,6 +39,11 @@ function deleteList() {
 	}
 	while (movieID.length > 0) {
 		movieID.pop();
+		movieTitle.pop();
+		movieDescription.pop();
+		movieImageURL.pop();
+		movieGenre.pop();
+		movieCast.pop();
 	}
 
 }
@@ -53,17 +63,24 @@ function createList(str, json) {
 		summary.setAttribute("id", "summary" + i);
 		img.setAttribute("id", "img" + i)
 
+
+		movieID.push(json.results[i].id);
+		movieTitle.push(json.results[i].title);
+		movieDescription.push(json.results[i].overview);
 		// Other URL for images 
 		//https://image.tmdb.org/t/p/w500/
 		//Reference:https://developers.themoviedb.org/3/getting-started/images
-		if (json.results[i].poster_path)
+		if (json.results[i].poster_path) {
 			img.setAttribute("src", "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].poster_path);
-		else if (json.results[i].backdrop_path) {
+			movieImageURL.push("https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].poster_path);
+		} else if (json.results[i].backdrop_path) {
 			img.setAttribute("src", "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].backdrop_path);
+			movieImageURL.push("https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].backdrop_path);
 		} else {
 			img.setAttribute = img.setAttribute("src", "https://via.placeholder.com/350x150");
+			movieImageURL.push("https://via.placeholder.com/350x150");
 		}
-		movieID.push(json.results[i].id);
+
 		//		console.log(json.results[i].id);
 		summary.innerHTML = json.results[i].overview;
 		//		title.innerHTML = " Movie Title: &nbsp; " + json.results[i].original_title + " &nbsp; Release: " + json.results[i].release_date;
@@ -75,4 +92,7 @@ function createList(str, json) {
 		ol.appendChild(li);
 	}
 	console.log(movieID);
+	console.log(movieTitle);
+	console.log(movieDescription);
+	console.log(movieImageURL);
 }
