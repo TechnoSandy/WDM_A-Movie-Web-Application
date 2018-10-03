@@ -1,6 +1,7 @@
 var resultObject;
 var movieID = new Array();
 var movieTitle = new Array();
+var movieReleaseDate = new Array();
 var movieDescription = new Array();
 var movieImageURL = new Array();
 var movieGenre = new Array();
@@ -40,10 +41,12 @@ function deleteList() {
 	while (movieID.length > 0) {
 		movieID.pop();
 		movieTitle.pop();
+		movieReleaseDate.pop();
 		movieDescription.pop();
 		movieImageURL.pop();
 		movieGenre.pop();
 		movieCast.pop();
+
 	}
 
 }
@@ -60,32 +63,37 @@ function createList(str, json) {
 
 		li.setAttribute("id", "li" + i);
 		title.setAttribute("id", "title" + i);
+		title.setAttribute("onclick", "alert('Title Clicked');");
 		summary.setAttribute("id", "summary" + i);
 		img.setAttribute("id", "img" + i)
 
 
 		movieID.push(json.results[i].id);
 		movieTitle.push(json.results[i].title);
-		movieDescription.push(json.results[i].overview);
+		movieReleaseDate.push(json.results[i].release_date);
+
+		if (json.results[i].overview) {
+			movieDescription.push(json.results[i].overview);
+		} else {
+			movieDescription.push("NO DESCRIPTION FOR THIS MOVIE");
+		}
 		// Other URL for images 
 		//https://image.tmdb.org/t/p/w500/
 		//Reference:https://developers.themoviedb.org/3/getting-started/images
 		if (json.results[i].poster_path) {
-			img.setAttribute("src", "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].poster_path);
 			movieImageURL.push("https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].poster_path);
 		} else if (json.results[i].backdrop_path) {
-			img.setAttribute("src", "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].backdrop_path);
 			movieImageURL.push("https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].backdrop_path);
 		} else {
-			img.setAttribute = img.setAttribute("src", "https://via.placeholder.com/350x150");
 			movieImageURL.push("https://via.placeholder.com/350x150");
 		}
 
 		//		console.log(json.results[i].id);
-		summary.innerHTML = json.results[i].overview;
+		img.setAttribute("src", movieImageURL[i]);
+		summary.innerHTML = movieDescription[i];
 		//		title.innerHTML = " Movie Title: &nbsp; " + json.results[i].original_title + " &nbsp; Release: " + json.results[i].release_date;
 		//		li.appendChild(title);
-		title.innerHTML = " Movie Title: &nbsp; " + json.results[i].title + " &nbsp; Release: " + json.results[i].release_date;
+		title.innerHTML = " Movie Title: &nbsp; " + movieTitle[i] + " &nbsp; Release: " + movieReleaseDate[i];
 		li.appendChild(title);
 		title.appendChild(summary);
 		title.appendChild(img);
@@ -93,6 +101,7 @@ function createList(str, json) {
 	}
 	console.log(movieID);
 	console.log(movieTitle);
+	console.log(movieReleaseDate);
 	console.log(movieDescription);
 	console.log(movieImageURL);
 }
