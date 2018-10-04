@@ -21,7 +21,7 @@ function sendRequest() {
 	xhr.onreadystatechange = function () {
 		if (this.readyState == 4) {
 			var json = JSON.parse(this.responseText);
-			console.log(json);
+			//			console.log(json);
 			var str = JSON.stringify(json, undefined, 2);
 			resultObject = json.results.length;
 			createList(str, json);
@@ -101,11 +101,11 @@ function createList(str, json) {
 		title.appendChild(img);
 		ol.appendChild(li);
 	}
-	console.log(movieID);
-	console.log(movieTitle);
-	console.log(movieReleaseDate);
-	console.log(movieDescription);
-	console.log(movieImageURL);
+	//	console.log(movieID);
+	//	console.log(movieTitle);
+	//	console.log(movieReleaseDate);
+	//	console.log(movieDescription);
+	//	console.log(movieImageURL);
 }
 
 
@@ -118,6 +118,37 @@ function titleClicked(titleElement) {
 			titleElement.children[i].style.display = "none";
 		}
 	}
+	console.log(titleElement.id.slice(-1));
+	getMovieGenre(titleElement);
+	getMovieCast(titleElement)
 
 
+}
+
+function getMovieGenre(titleElement) {
+	var titleNumber = titleElement.id.slice(-1);
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", "php/proxy.php?method=/3/movie/" + movieID[titleNumber]); // Gets the Movie Info
+	xhr.setRequestHeader("Accept", "application/json");
+	xhr.onreadystatechange = function () {
+		if (this.readyState == 4) {
+			var json = JSON.parse(this.responseText);
+			console.log(json);
+		}
+	};
+	xhr.send(null);
+}
+
+function getMovieCast(titleElement) {
+	var titleNumber = titleElement.id.slice(-1);
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", "php/proxy.php?method=/3/movie/" + movieID[titleNumber] + "/credits"); // Gets the Movie Credits
+	xhr.setRequestHeader("Accept", "application/json");
+	xhr.onreadystatechange = function () {
+		if (this.readyState == 4) {
+			var json = JSON.parse(this.responseText);
+			console.log(json);
+		}
+	};
+	xhr.send(null);
 }
