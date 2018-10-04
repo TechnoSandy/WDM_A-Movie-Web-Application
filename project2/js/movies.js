@@ -63,9 +63,11 @@ function createList(str, json) {
 
 		li.setAttribute("id", "li" + i);
 		title.setAttribute("id", "title" + i);
-		title.setAttribute("onclick", "alert('Title Clicked');");
+		title.setAttribute("onclick", "titleClicked(this);");
 		summary.setAttribute("id", "summary" + i);
-		img.setAttribute("id", "img" + i)
+		summary.setAttribute("style", "display : none;");
+		img.setAttribute("id", "img" + i);
+		img.setAttribute("style", "display : none;")
 
 
 		movieID.push(json.results[i].id);
@@ -104,4 +106,18 @@ function createList(str, json) {
 	console.log(movieReleaseDate);
 	console.log(movieDescription);
 	console.log(movieImageURL);
+}
+
+
+function titleClicked(titleElement) {
+
+	for (var i = 0; i < 2; i++) {
+		if (titleElement.children[i].style.display === "none") {
+			titleElement.children[i].style.display = "block";
+		} else {
+			titleElement.children[i].style.display = "none";
+		}
+	}
+
+
 }
