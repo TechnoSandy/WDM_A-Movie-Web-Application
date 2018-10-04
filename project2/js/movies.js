@@ -120,7 +120,7 @@ function titleClicked(titleElement) {
 	}
 	console.log(titleElement.id.slice(-1));
 	getMovieGenre(titleElement);
-	getMovieCast(titleElement)
+	getMovieCast(titleElement);
 
 
 }
