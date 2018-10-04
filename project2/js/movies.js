@@ -111,7 +111,7 @@ function createList(str, json) {
 
 function titleClicked(titleElement) {
 
-	for (var i = 0; i < 2; i++) {
+	for (var i = 0; i < titleElement.children.length; i++) {
 		if (titleElement.children[i].style.display === "none") {
 			titleElement.children[i].style.display = "block";
 		} else {
