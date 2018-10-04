@@ -127,6 +127,9 @@ function titleClicked(titleElement) {
 }
 
 function getMovieGenre(titleElement) {
+	while (movieGenre.length > 0) {
+		movieGenre.pop();
+	}
 	var titleNumber = titleElement.id.slice(-1);
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET", "php/proxy.php?method=/3/movie/" + movieID[titleNumber]); // Gets the Movie Info
@@ -136,15 +139,20 @@ function getMovieGenre(titleElement) {
 			var json = JSON.parse(this.responseText);
 			//			console.log(json);
 			for (var i = 0; i < json.genres.length; i++) {
-				console.log(json.genres[i].name);
+				//				console.log(json.genres[i].name);
+				movieGenre.push(json.genres[i].name);
 			}
 
 		}
 	};
 	xhr.send(null);
+	console.log(movieGenre);
 }
 
 function getMovieCast(titleElement) {
+	while (movieCast.length > 0) {
+		movieCast.pop();
+	}
 	var numberOfCastToPrint;
 	var titleNumber = titleElement.id.slice(-1);
 	var xhr = new XMLHttpRequest();
@@ -160,9 +168,11 @@ function getMovieCast(titleElement) {
 				numberOfCastToPrint = json.cast.length;
 			}
 			for (var i = 0; i < numberOfCastToPrint; i++) {
-				console.log(json.cast[i].character);
+				//				console.log(json.cast[i].character);
+				movieCast.push(json.cast[i].character);
 			}
 		}
 	};
 	xhr.send(null);
+	console.log(movieCast);
 }
