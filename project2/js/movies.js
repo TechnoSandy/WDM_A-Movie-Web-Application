@@ -145,6 +145,7 @@ function getMovieGenre(titleElement) {
 }
 
 function getMovieCast(titleElement) {
+	var numberOfCastToPrint;
 	var titleNumber = titleElement.id.slice(-1);
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET", "php/proxy.php?method=/3/movie/" + movieID[titleNumber] + "/credits"); // Gets the Movie Credits
@@ -153,6 +154,14 @@ function getMovieCast(titleElement) {
 		if (this.readyState == 4) {
 			var json = JSON.parse(this.responseText);
 			//			console.log(json);
+			if (json.cast.length > 5) {
+				numberOfCastToPrint = 5;
+			} else {
+				numberOfCastToPrint = json.cast.length;
+			}
+			for (var i = 0; i < numberOfCastToPrint; i++) {
+				console.log(json.cast[i].character);
+			}
 		}
 	};
 	xhr.send(null);
