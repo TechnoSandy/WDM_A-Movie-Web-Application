@@ -110,6 +110,8 @@ function createList(str, json) {
 
 
 function titleClicked(titleElement) {
+	getMovieGenre(titleElement);
+	getMovieCast(titleElement);
 
 	for (var i = 0; i < titleElement.children.length; i++) {
 		if (titleElement.children[i].style.display === "none") {
@@ -118,9 +120,8 @@ function titleClicked(titleElement) {
 			titleElement.children[i].style.display = "none";
 		}
 	}
-	console.log(titleElement.id.slice(-1));
-	getMovieGenre(titleElement);
-	getMovieCast(titleElement);
+	//	console.log(titleElement.id.slice(-1));
+
 
 
 }
@@ -133,7 +134,11 @@ function getMovieGenre(titleElement) {
 	xhr.onreadystatechange = function () {
 		if (this.readyState == 4) {
 			var json = JSON.parse(this.responseText);
-			console.log(json);
+			//			console.log(json);
+			for (var i = 0; i < json.genres.length; i++) {
+				console.log(json.genres[i].name);
+			}
+
 		}
 	};
 	xhr.send(null);
@@ -147,7 +152,7 @@ function getMovieCast(titleElement) {
 	xhr.onreadystatechange = function () {
 		if (this.readyState == 4) {
 			var json = JSON.parse(this.responseText);
-			console.log(json);
+			//			console.log(json);
 		}
 	};
 	xhr.send(null);
