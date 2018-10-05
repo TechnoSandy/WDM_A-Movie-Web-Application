@@ -21,7 +21,6 @@ function sendRequest() {
 	xhr.onreadystatechange = function () {
 		if (this.readyState == 4) {
 			var json = JSON.parse(this.responseText);
-			//			console.log(json);
 			var str = JSON.stringify(json, undefined, 2);
 			resultObject = json.results.length;
 			createList(str, json);
@@ -120,16 +119,18 @@ function titleClicked(titleElement) {
 			titleElement.children[i].style.display = "none";
 		}
 	}
-	//	console.log(titleElement.id.slice(-1));
-
-
-
 }
 
 function getMovieGenre(titleElement) {
 	while (movieGenre.length > 0) {
 		movieGenre.pop();
 	}
+
+	var title = document.getElementById("title" + titleElement.id.slice(-1));
+	var genere = document.createElement('p');
+	genere.setAttribute("id", "genere" + titleElement.id.slice(-1));
+	genere.setAttribute("style", "display : none;");
+
 	var titleNumber = titleElement.id.slice(-1);
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET", "php/proxy.php?method=/3/movie/" + movieID[titleNumber]); // Gets the Movie Info
@@ -140,19 +141,25 @@ function getMovieGenre(titleElement) {
 			//			console.log(json);
 			for (var i = 0; i < json.genres.length; i++) {
 				//				console.log(json.genres[i].name);
-				movieGenre.push(json.genres[i].name);
+				genere.innerHTML += json.genres[i].name + ",";
+				//				movieGenre.push(json.genres[i].name);
 			}
 
 		}
 	};
 	xhr.send(null);
-	console.log(movieGenre);
+	title.appendChild(genere);
 }
 
 function getMovieCast(titleElement) {
 	while (movieCast.length > 0) {
 		movieCast.pop();
 	}
+	var title = document.getElementById("title" + titleElement.id.slice(-1));
+	var cast = document.createElement('p');
+	cast.setAttribute("id", "cast" + titleElement.id.slice(-1));
+	cast.setAttribute("style", "display : none;");
+
 	var numberOfCastToPrint;
 	var titleNumber = titleElement.id.slice(-1);
 	var xhr = new XMLHttpRequest();
@@ -161,18 +168,21 @@ function getMovieCast(titleElement) {
 	xhr.onreadystatechange = function () {
 		if (this.readyState == 4) {
 			var json = JSON.parse(this.responseText);
-			//			console.log(json);
+			console.log(json);
 			if (json.cast.length > 5) {
 				numberOfCastToPrint = 5;
 			} else {
 				numberOfCastToPrint = json.cast.length;
 			}
 			for (var i = 0; i < numberOfCastToPrint; i++) {
-				//				console.log(json.cast[i].character);
+
 				movieCast.push(json.cast[i].character);
+			}
+			for (var i = 0; i < json.cast.length; i++) {
+				cast.innerHTML += json.cast[i].name + ",";
 			}
 		}
 	};
 	xhr.send(null);
-	console.log(movieCast);
+	title.appendChild(cast);
 }
