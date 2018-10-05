@@ -121,18 +121,15 @@ function titleClicked(titleElement) {
 }
 
 function getMovieGenre(titleElement) {
-
-
-	var title = document.getElementById("title" + titleElement.id.slice(-1));
+	var title = document.getElementById("title" + titleElement.id.match(/\d+/)[0]);
 	var genere = document.createElement('p');
-	if (!document.getElementById("genere" + titleElement.id.slice(-1))) {
-
-		genere.setAttribute("id", "genere" + titleElement.id.slice(-1));
+	if (!document.getElementById("genere" + titleElement.id.match(/\d+/)[0])) {
+		genere.setAttribute("id", "genere" + titleElement.id.match(/\d+/)[0]);
 		genere.setAttribute("style", "display : none;");
 		title.appendChild(genere);
 	}
 
-	var titleNumber = titleElement.id.slice(-1);
+	var titleNumber = titleElement.id.match(/\d+/)[0];
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET", "php/proxy.php?method=/3/movie/" + movieID[titleNumber]); // Gets the Movie Info
 	xhr.setRequestHeader("Accept", "application/json");
@@ -152,19 +149,18 @@ function getMovieGenre(titleElement) {
 }
 
 function getMovieCast(titleElement) {
-
-	var title = document.getElementById("title" + titleElement.id.slice(-1));
+	//	console.log("titleElement.id " + titleElement.id.match(/\d+/)[0])
+	var title = document.getElementById("title" + titleElement.id.match(/\d+/)[0]);
 	var cast = document.createElement('p');
-	if (!document.getElementById("cast" + titleElement.id.slice(-1))) {
-
-		cast.setAttribute("id", "cast" + titleElement.id.slice(-1));
+	if (!document.getElementById("cast" + titleElement.id.match(/\d+/)[0])) {
+		cast.setAttribute("id", "cast" + titleElement.id.match(/\d+/)[0]);
 		cast.setAttribute("style", "display : none;");
 		title.appendChild(cast);
 	}
 
 
 	var numberOfCastToPrint;
-	var titleNumber = titleElement.id.slice(-1);
+	var titleNumber = titleElement.id.match(/\d+/)[0];
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET", "php/proxy.php?method=/3/movie/" + movieID[titleNumber] + "/credits"); // Gets the Movie Credits
 	xhr.setRequestHeader("Accept", "application/json");
