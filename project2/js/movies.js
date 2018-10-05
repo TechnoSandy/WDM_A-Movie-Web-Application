@@ -76,12 +76,13 @@ function createList(str, json) {
 			movieDescription.push("NO DESCRIPTION FOR THIS MOVIE");
 		}
 		// Other URL for images 
+		//https://image.tmdb.org/t/p/w185_and_h278_bestv2
 		//https://image.tmdb.org/t/p/w500/
 		//Reference:https://developers.themoviedb.org/3/getting-started/images
 		if (json.results[i].poster_path) {
-			movieImageURL.push("https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].poster_path);
+			movieImageURL.push("https://image.tmdb.org/t/p/w500/" + json.results[i].poster_path);
 		} else if (json.results[i].backdrop_path) {
-			movieImageURL.push("https://image.tmdb.org/t/p/w185_and_h278_bestv2" + json.results[i].backdrop_path);
+			movieImageURL.push("https://image.tmdb.org/t/p/w500/" + json.results[i].backdrop_path);
 		} else {
 			movieImageURL.push("https://via.placeholder.com/350x150");
 		}
@@ -113,7 +114,6 @@ function titleClicked(titleElement) {
 	for (var i = 0; i < titleElement.children.length; i++) {
 		if (titleElement.children[i].style.display === "none") {
 			titleElement.children[i].style.display = "block";
-
 		} else {
 			titleElement.children[i].style.display = "none";
 		}
@@ -124,9 +124,9 @@ function getMovieGenre(titleElement) {
 
 
 	var title = document.getElementById("title" + titleElement.id.slice(-1));
-
+	var genere = document.createElement('p');
 	if (!document.getElementById("genere" + titleElement.id.slice(-1))) {
-		var genere = document.createElement('p');
+
 		genere.setAttribute("id", "genere" + titleElement.id.slice(-1));
 		genere.setAttribute("style", "display : none;");
 		title.appendChild(genere);
@@ -154,8 +154,9 @@ function getMovieGenre(titleElement) {
 function getMovieCast(titleElement) {
 
 	var title = document.getElementById("title" + titleElement.id.slice(-1));
+	var cast = document.createElement('p');
 	if (!document.getElementById("cast" + titleElement.id.slice(-1))) {
-		var cast = document.createElement('p');
+
 		cast.setAttribute("id", "cast" + titleElement.id.slice(-1));
 		cast.setAttribute("style", "display : none;");
 		title.appendChild(cast);
