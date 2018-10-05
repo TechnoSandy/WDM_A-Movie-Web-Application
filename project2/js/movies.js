@@ -115,6 +115,7 @@ function titleClicked(titleElement) {
 	for (var i = 0; i < titleElement.children.length; i++) {
 		if (titleElement.children[i].style.display === "none") {
 			titleElement.children[i].style.display = "block";
+
 		} else {
 			titleElement.children[i].style.display = "none";
 		}
@@ -127,9 +128,13 @@ function getMovieGenre(titleElement) {
 	}
 
 	var title = document.getElementById("title" + titleElement.id.slice(-1));
-	var genere = document.createElement('p');
-	genere.setAttribute("id", "genere" + titleElement.id.slice(-1));
-	genere.setAttribute("style", "display : none;");
+
+	if (!document.getElementById("genere" + titleElement.id.slice(-1))) {
+		var genere = document.createElement('p');
+		genere.setAttribute("id", "genere" + titleElement.id.slice(-1));
+		genere.setAttribute("style", "display : none;");
+		title.appendChild(genere);
+	}
 
 	var titleNumber = titleElement.id.slice(-1);
 	var xhr = new XMLHttpRequest();
@@ -148,7 +153,7 @@ function getMovieGenre(titleElement) {
 		}
 	};
 	xhr.send(null);
-	title.appendChild(genere);
+
 }
 
 function getMovieCast(titleElement) {
@@ -156,9 +161,13 @@ function getMovieCast(titleElement) {
 		movieCast.pop();
 	}
 	var title = document.getElementById("title" + titleElement.id.slice(-1));
-	var cast = document.createElement('p');
-	cast.setAttribute("id", "cast" + titleElement.id.slice(-1));
-	cast.setAttribute("style", "display : none;");
+	if (!document.getElementById("cast" + titleElement.id.slice(-1))) {
+		var cast = document.createElement('p');
+		cast.setAttribute("id", "cast" + titleElement.id.slice(-1));
+		cast.setAttribute("style", "display : none;");
+		title.appendChild(cast);
+	}
+
 
 	var numberOfCastToPrint;
 	var titleNumber = titleElement.id.slice(-1);
@@ -168,14 +177,13 @@ function getMovieCast(titleElement) {
 	xhr.onreadystatechange = function () {
 		if (this.readyState == 4) {
 			var json = JSON.parse(this.responseText);
-			console.log(json);
+			//			console.log(json);
 			if (json.cast.length > 5) {
 				numberOfCastToPrint = 5;
 			} else {
 				numberOfCastToPrint = json.cast.length;
 			}
 			for (var i = 0; i < numberOfCastToPrint; i++) {
-
 				movieCast.push(json.cast[i].character);
 			}
 			for (var i = 0; i < json.cast.length; i++) {
@@ -184,5 +192,5 @@ function getMovieCast(titleElement) {
 		}
 	};
 	xhr.send(null);
-	title.appendChild(cast);
+
 }
