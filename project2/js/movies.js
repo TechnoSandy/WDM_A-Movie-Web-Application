@@ -4,8 +4,6 @@ var movieTitle = new Array();
 var movieReleaseDate = new Array();
 var movieDescription = new Array();
 var movieImageURL = new Array();
-var movieGenre = new Array();
-var movieCast = new Array();
 
 function initialize() {
 
@@ -43,9 +41,6 @@ function deleteList() {
 		movieReleaseDate.pop();
 		movieDescription.pop();
 		movieImageURL.pop();
-		movieGenre.pop();
-		movieCast.pop();
-
 	}
 
 }
@@ -59,6 +54,8 @@ function createList(str, json) {
 		var title = document.createElement('p');
 		var img = document.createElement('img');
 		var summary = document.createElement('p');
+		//		var GenereLabel = document.createElement('p');
+		//		GenereLabel.innerHTML = "Genere : ";
 
 		li.setAttribute("id", "li" + i);
 		title.setAttribute("id", "title" + i);
@@ -98,6 +95,7 @@ function createList(str, json) {
 		li.appendChild(title);
 		title.appendChild(summary);
 		title.appendChild(img);
+		//		title.appendChild(GenereLabel);
 		ol.appendChild(li);
 	}
 	//	console.log(movieID);
@@ -123,9 +121,7 @@ function titleClicked(titleElement) {
 }
 
 function getMovieGenre(titleElement) {
-	while (movieGenre.length > 0) {
-		movieGenre.pop();
-	}
+
 
 	var title = document.getElementById("title" + titleElement.id.slice(-1));
 
@@ -153,13 +149,10 @@ function getMovieGenre(titleElement) {
 		}
 	};
 	xhr.send(null);
-
 }
 
 function getMovieCast(titleElement) {
-	while (movieCast.length > 0) {
-		movieCast.pop();
-	}
+
 	var title = document.getElementById("title" + titleElement.id.slice(-1));
 	if (!document.getElementById("cast" + titleElement.id.slice(-1))) {
 		var cast = document.createElement('p');
@@ -184,9 +177,6 @@ function getMovieCast(titleElement) {
 				numberOfCastToPrint = json.cast.length;
 			}
 			for (var i = 0; i < numberOfCastToPrint; i++) {
-				movieCast.push(json.cast[i].character);
-			}
-			for (var i = 0; i < json.cast.length; i++) {
 				cast.innerHTML += json.cast[i].name + ",";
 			}
 		}

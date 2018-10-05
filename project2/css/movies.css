@@ -1,18 +1,4 @@
-div#output {
-	/*	border: 1px red dotted;*/
-	color: black;
-	font-size: xx-large;
-	display: inline-block;
-	margin-left: 40px;
-}
-
-div#output>ol {
-	padding: 0px;
-	margin: 0px;
-	display: inline-block;
-}
-
-#form-input {
+input#form-input {
 	font-size: 30px;
 	width: 75%;
 }
