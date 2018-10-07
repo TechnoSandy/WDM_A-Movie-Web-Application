@@ -127,14 +127,14 @@ function titleClicked(titleElement) {
 
 function getMovieGenre(titleElement) {
 	var genereLabel = document.createElement('p');
-	genereLabel.innerHTML = "Genere : ";
-	genereLabel.setAttribute("style", "display : none; text-decoration: underline;font-style: italic;font-weight: bold;");
 	var title = document.getElementById("title" + titleElement.id.match(/\d+/)[0]);
-	title.appendChild(genereLabel);
 	var genere = document.createElement('p');
 	if (!document.getElementById("genere" + titleElement.id.match(/\d+/)[0])) {
 		genere.setAttribute("id", "genere" + titleElement.id.match(/\d+/)[0]);
 		genere.setAttribute("style", "display : none;");
+		genereLabel.innerHTML = "Genere : ";
+		genereLabel.setAttribute("style", "display : none; text-decoration: underline;font-style: italic;font-weight: bold;");
+		title.appendChild(genereLabel);
 		title.appendChild(genere);
 	}
 
@@ -160,14 +160,16 @@ function getMovieGenre(titleElement) {
 function getMovieCast(titleElement) {
 	//	console.log("titleElement.id " + titleElement.id.match(/\d+/)[0])
 	var castLabel = document.createElement('p');
-	castLabel.innerHTML = "Cast : ";
-	castLabel.setAttribute("style", "display : none; text-decoration: underline;font-style: italic;font-weight: bold;");
+
 	var title = document.getElementById("title" + titleElement.id.match(/\d+/)[0]);
-	title.appendChild(castLabel);
+
 	var cast = document.createElement('p');
 	if (!document.getElementById("cast" + titleElement.id.match(/\d+/)[0])) {
 		cast.setAttribute("id", "cast" + titleElement.id.match(/\d+/)[0]);
 		cast.setAttribute("style", "display : none;");
+		castLabel.innerHTML = "Cast : ";
+		castLabel.setAttribute("style", "display : none; text-decoration: underline;font-style: italic;font-weight: bold;");
+		title.appendChild(castLabel);
 		title.appendChild(cast);
 	}
 
