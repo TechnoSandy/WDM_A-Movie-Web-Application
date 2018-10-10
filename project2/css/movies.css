@@ -10,3 +10,14 @@ label {
 #button {
 	font-size: x-large;
 }
+
+#output {
+	width: 300px;
+	pointer-events: auto;
+	float: left;
+}
+
+#outputMSG {
+	width: 700px;
+	float: right;
+}
